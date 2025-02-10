@@ -26,7 +26,6 @@
     </div>
 
     <div class="main-content" id="content">
-        <!-- Initial content can go here, like the dashboard -->
     </div>
 
     <script>
