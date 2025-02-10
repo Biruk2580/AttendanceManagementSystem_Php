@@ -1,14 +1,10 @@
 <?php
-// Start a session
 session_start();
 $conn = new mysqli("localhost", "root", "", "attendance_system");
 
-// Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve the selected date
     $date = $_POST['date'];
 
-    // Loop through the attendance data and insert into the database
     if (isset($_POST['attendance'])) {
         foreach ($_POST['attendance'] as $id => $status) {
             $status = $conn->real_escape_string($status);
