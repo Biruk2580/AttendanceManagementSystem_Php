@@ -26,7 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['trainee_name'])) {
     }
 }
 
-// Fetch statistics
 $totalTraineesResult = $conn->query("SELECT COUNT(*) AS total FROM attendees");
 $totalTrainees = $totalTraineesResult->fetch_assoc()['total'];
 
@@ -58,7 +57,7 @@ $presentPercentage = $totalTrainees > 0 ? round(($totalAttendance / ($totalTrain
             display: flex;
             flex-direction: column;
             align-items: center;
-            position: fixed; /* Fixed sidebar */
+            position: fixed; 
             height: 100%;
         }
         .sidebar a {
@@ -75,7 +74,6 @@ $presentPercentage = $totalTrainees > 0 ? round(($totalAttendance / ($totalTrain
         }
         .sidebar a:hover { background: #1abc9c; }
 
-        /* Main content */
         .main-content {
             flex: 1;
             padding: 20px;
@@ -138,7 +136,6 @@ $presentPercentage = $totalTrainees > 0 ? round(($totalAttendance / ($totalTrain
 </head>
 <body>
 
-    <!-- Sidebar -->
     <div class="sidebar">
         <h2>Admin Panel</h2>
         <a href="javascript:void(0);" onclick="loadPage('home')">Dashboard</a>
@@ -170,17 +167,14 @@ $presentPercentage = $totalTrainees > 0 ? round(($totalAttendance / ($totalTrain
     </div>
 </div>
 
-<!-- Register Trainee Form -->
 
             </div>
         </div>
 
-        <!-- Register Trainee Form -->
         
 
     </div>
 
-    <!-- JavaScript to Handle AJAX Requests and Page Load -->
     <script>
         function loadPage(page) {
             var xhr = new XMLHttpRequest();
