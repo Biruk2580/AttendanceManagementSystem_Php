@@ -160,17 +160,14 @@ $presentPercentage = $totalTrainees > 0 ? round(($totalAttendance / ($totalTrain
     </div>
 </div>
 
-<!-- Register Trainee Form -->
 
             </div>
         </div>
 
-        <!-- Register Trainee Form -->
         
 
     </div>
 
-    <!-- JavaScript to Handle AJAX Requests and Page Load -->
     <script>
         function loadPage(page) {
             var xhr = new XMLHttpRequest();
