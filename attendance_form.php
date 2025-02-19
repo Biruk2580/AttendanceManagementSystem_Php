@@ -10,13 +10,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $status = $conn->real_escape_string($status);
             $sql = "INSERT INTO attendance (trainee_id, status, date) VALUES ('$id', '$status', '$date')";
             if (!$conn->query($sql)) {
-                // Error message if insert fails
                 echo "Error: " . $conn->error;
             }
         }
     }
 
-    // Redirect to the dashboard page after submitting the attendance
     //header("Location: dashboard.php");
     //exit();  // Ensure no further code is executed
 }
@@ -41,7 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <th>Absent</th>
             </tr>
             <?php
-            // Fetch the list of attendees from the database
             $result = $conn->query("SELECT * FROM attendees");
             while ($row = $result->fetch_assoc()) {
             ?>
