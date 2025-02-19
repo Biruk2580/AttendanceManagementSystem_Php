@@ -26,7 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['trainee_name'])) {
     }
 }
 
-// Fetch statistics
 $totalTraineesResult = $conn->query("SELECT COUNT(*) AS total FROM attendees");
 $totalTrainees = $totalTraineesResult->fetch_assoc()['total'];
 
@@ -49,7 +48,6 @@ $presentPercentage = $totalTrainees > 0 ? round(($totalAttendance / ($totalTrain
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
         body { display: flex; height: 100vh; }
 
-        /* Sidebar */
         .sidebar {
             width: 250px;
             background: #2c3e50;
@@ -75,7 +73,6 @@ $presentPercentage = $totalTrainees > 0 ? round(($totalAttendance / ($totalTrain
         }
         .sidebar a:hover { background: #1abc9c; }
 
-        /* Main content */
         .main-content {
             flex: 1;
             padding: 20px;
@@ -102,7 +99,6 @@ $presentPercentage = $totalTrainees > 0 ? round(($totalAttendance / ($totalTrain
         .card h3 { color: #333; }
         .card p { font-size: 20px; font-weight: bold; }
 
-        /* Form Styling */
         .form-container {
             margin-top: 20px;
             padding: 15px;
@@ -132,13 +128,11 @@ $presentPercentage = $totalTrainees > 0 ? round(($totalAttendance / ($totalTrain
             background: #16a085;
         }
 
-        /* Logout */
         .logout { margin-top: auto; background: red; }
     </style>
 </head>
 <body>
 
-    <!-- Main Content -->
     <div class="main-content" id="content">
         <h1>Dashboard</h1>
 <div class="cards">
